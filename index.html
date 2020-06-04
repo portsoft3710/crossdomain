@@ -32,7 +32,7 @@ let c = document.cookie;
 if(c){
 	for(let p of c.split('; ')){
 		if(p.split('=')[0] == 'test'){
-			document.getElementById('test').value = c.split(';')[0].split('=')[1];
+			document.getElementById('test').value = p.split('=')[1];
 		}
 	}
 }
