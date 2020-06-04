@@ -1,0 +1,33 @@
+<body>
+  <iframe id="iframe" src="https://portsoft3710.github.io/indexeddb/crossdomain.html" style="display: none;"></iframe>
+  <input type="text" name="text" id="text">
+  <button id="set">ストレージに値を入れる</button>
+  <button id="get">ストレージの値を取得する</button>
+  <script>
+  (function() {
+    var iframeWindow = document.querySelector('#iframe').contentWindow;
+    var $text = document.querySelector('#text');
+    var $setButton = document.querySelector('#set');
+    var $getButton = document.querySelector('#get');
+    var origin = 'https://portsoft3710.github.io';
+
+    window.addEventListener('message', function(event) {
+      // 送信元が指定のオリジンと一致していれば処理を行う
+      if(event.origin === origin) {
+        alert(event.data);
+      }
+    });
+
+    $setButton.addEventListener('click', function() {
+      // テキストエリアに入力されている値を送信
+      iframeWindow.postMessage(`test,${$text.value}`, origin);
+    });
+
+    $getButton.addEventListener('click', function() {
+      // localstorageの値の取得を要求するメッセージ送信
+      iframeWindow.postMessage('get', origin);
+    });
+
+  })();
+  </script>
+</body>
