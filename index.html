@@ -31,7 +31,7 @@ window.addEventListener('load', function() {
 let c = document.cookie;
 if(c){
 	for(let p of c.split(';')){
-		if(p.split('=')[0] == 'test'){
+		if(p.split('=')[0] == ' test'){
 			document.getElementById('test').value = c.split(';')[0].split('=')[1];
 		}
 	}
