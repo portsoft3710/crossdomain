@@ -1,0 +1,16 @@
+{
+  "name": "janken",
+  "short_name": "janken",
+  "theme_color": "#2196f3",
+  "background_color": "#2196f3",
+  "start_url": "./?utm_source=homescreen",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "images/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    }
+  ],
+  "splash_pages": null
+}
