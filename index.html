@@ -30,7 +30,7 @@ window.addEventListener('load', function() {
   <script>
 let c = document.cookie;
 if(c){
-  document.getElementById('test').value = c.split('=')[1];
+  document.getElementById('test').value = c.split('=')[3];
 }
 function registStorage(){
 	let data = document.getElementById('test').value * 1;
