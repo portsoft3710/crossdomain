@@ -40,7 +40,7 @@ function registStorage(){
 	let data = document.getElementById('test').value * 1;
 	data+=7;
 	document.getElementById('test').value = data;
-	document.cookie = 'test=' + data;
+	document.cookie = 'test=' + data + '; expires=Tue, 31-Dec-2037 00:00:00 GMT';
 }
   </script>
 </body>
