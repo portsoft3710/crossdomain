@@ -25,14 +25,19 @@ window.addEventListener('load', function() {
 </script>
 </head>
  <body>
-  <iframe id="iframe" src="https://portsoft3710.github.io/indexeddb/crossdomain.html" style="display: none;"></iframe>
-  <input type="text" name="text" id="text">
-  <button id="set">ストレージに値を入れる</button>
-  <button id="get">ストレージの値を取得する</button>
+<input type="text" id="test">
+<button type="button" onclick="registStorage()">button</button>
   <script>
-document.cookie = 'test1=aaa';
-debugger;
-let aa = document.cookie;
+let c = document.cookie;
+if(c){
+  document.getElementById('test').value = c.split('=')[1];
+}
+function registStorage(){
+	let data = document.getElementById('test').value * 1;
+	data+=7;
+	document.getElementById('test').value = data;
+	document.cookie = 'test=' + data;
+}
   </script>
 </body>
 </html>
